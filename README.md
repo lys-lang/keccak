@@ -17,7 +17,6 @@ To start with the code please take a look at
 - The implementation of keccak [src/keccak.lys](src/keccak.lys)
 - The exposed API [src/main.lys](src/main.lys)
 - The glue code for JS [src/index.ts](src/index.ts)
-- The glue code for JS [src/index.ts](src/index.ts)
 
 ## To build locally
 
