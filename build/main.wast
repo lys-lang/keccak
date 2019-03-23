@@ -21,12 +21,11 @@
  (global $global$7 (mut i64) (i64.const 0))
  (export "memory" (memory $0))
  (export "test_getMaxMemory" (func $0))
- (export "resultAddress" (func $15))
- (export "reset" (func $16))
- (export "digest" (func $17))
- (export "update" (func $18))
+ (export "reset" (func $15))
+ (export "digest" (func $16))
+ (export "update" (func $17))
  (export "topMemory" (func $0))
- (start $19)
+ (start $18)
  (func $0 (; 0 ;) (type $1) (result i32)
   (global.get $global$6)
  )
@@ -3055,19 +3054,7 @@
    )
   )
  )
- (func $15 (; 15 ;) (type $1) (result i32)
-  (i32.wrap_i64
-   (i64.load
-    (i32.add
-     (i32.wrap_i64
-      (global.get $global$7)
-     )
-     (i32.const 8)
-    )
-   )
-  )
- )
- (func $16 (; 16 ;) (type $0)
+ (func $15 (; 15 ;) (type $0)
   (call $12
    (i32.add
     (i32.wrap_i64
@@ -3081,7 +3068,7 @@
    )
   )
  )
- (func $17 (; 17 ;) (type $1) (result i32)
+ (func $16 (; 16 ;) (type $1) (result i32)
   (local $0 i64)
   (call $14
    (i32.add
@@ -3110,21 +3097,18 @@
     (i32.const 4)
    )
   )
-  (i32.add
-   (i32.wrap_i64
-    (i64.load
-     (i32.add
-      (i32.wrap_i64
-       (local.get $0)
-      )
-      (i32.const 8)
+  (i32.wrap_i64
+   (i64.load
+    (i32.add
+     (i32.wrap_i64
+      (local.get $0)
      )
+     (i32.const 8)
     )
    )
-   (i32.const 4)
   )
  )
- (func $18 (; 18 ;) (type $9) (param $0 i32) (param $1 i32)
+ (func $17 (; 17 ;) (type $9) (param $0 i32) (param $1 i32)
   (call $13
    (i32.add
     (i32.wrap_i64
@@ -3140,7 +3124,7 @@
    (local.get $1)
   )
  )
- (func $19 (; 19 ;) (type $0)
+ (func $18 (; 18 ;) (type $0)
   (local $0 i64)
   (local $1 i64)
   (global.set $global$0

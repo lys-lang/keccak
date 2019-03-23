@@ -2,10 +2,9 @@
   "name": "keccak",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lys-lang/keccak.git"
@@ -17,7 +16,8 @@
     "url": "https://github.com/lys-lang/keccak/issues"
   },
   "homepage": "https://github.com/lys-lang/keccak#readme",
-  "dependencies": {
+  "devDependencies": {
+    "lys-compiler": "^0.1.5",
     "utf8-bytes": "0.0.1"
   }
 }

@@ -2,4 +2,9 @@ install:
 	npm install -g lys-compiler
 
 build:
-	lys main.lys
+	(rm -rf build || true)
+	lys src/main.lys --wast
+	npx @zeit/ncc build src/index.ts -o dist
+	npx mocha test.js
+
+.PHONY: build

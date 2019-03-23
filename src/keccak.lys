@@ -1,18 +1,11 @@
-// https://github.com/axic/keccak-wasm/blob/master/keccak.wast
-// Keccak-256 (pre-standard SHA3) implementation in WASM
+//
+// Keccak-256 (pre-standard SHA3) implementation in Lys
 //
 // Main entry point is $KECCAK which has 4 parameters:
 // - context offset (i32) -> 616 bytes of context
 // - input offset (i32)
 // - input length (i32)
 // - output offset (i32) -> 32 byte hash
-//
-// --
-//
-// Specification at: http://keccak.noekeon.org/specs_summary.html
-//
-// This implementation is based on https://github.com/rhash/RHash/blob/master/librhash/sha3.c
-//
 //
 
 struct Keccak(data: bytes, result: bytes)
@@ -73,7 +66,7 @@ impl Keccak {
         i64.load(context, 176 as u32)
 
     val C3 =
-        i64.load(context, 24 as u32) ^ i64.load(context, 64 as u32) ^
+        i64.load(context, 24 as u32) ^ i64.load(context, 64 as u32)   ^
         i64.load(context, 104 as u32) ^ i64.load(context, 144 as u32) ^
         i64.load(context, 184 as u32)
 
