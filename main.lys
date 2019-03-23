@@ -1,0 +1,23 @@
+import hash::keccak
+
+var k = Keccak()
+
+#[export] fun resultAddress(): u32 = {
+  k.result.ptr - 4 as u32
+}
+
+#[export] fun reset(): void = {
+  Keccak.reset(k)
+}
+
+#[export] fun digest(): u32 = {
+  Keccak.digest(k).ptr
+}
+
+#[export] fun update(address: u32, length: u32): void = {
+  Keccak.update(k, address, length)
+}
+
+#[export] fun topMemory(): u32 = {
+  system::memory::getMaxMemory()
+}
