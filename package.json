@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/lys-lang/keccak#readme",
   "devDependencies": {
-    "lys-compiler": "^0.1.5",
+    "lys-compiler": "latest",
     "utf8-bytes": "0.0.1"
   }
 }
