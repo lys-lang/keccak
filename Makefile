@@ -4,7 +4,6 @@ install:
 build:
 	(rm -rf build || true)
 	lys src/main.lys --wast
-	lys src/wapm.lys --wast
 	npx @zeit/ncc build src/index.ts -o dist
 	npx mocha test.js
 
