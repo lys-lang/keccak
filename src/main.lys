@@ -35,5 +35,5 @@ fun update(address: u32, length: u32): void = {
  */
 #[export]
 fun topMemory(): u32 = {
-  system::memory::getMaxMemory()
+  system::core::memory::getMaxMemory()
 }
