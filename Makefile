@@ -1,5 +1,5 @@
 install:
-	npm install -g lys-compiler
+	npm install -g lys
 
 build:
 	(rm -rf build || true)
