@@ -19,9 +19,9 @@ impl Keccak {
     // 400: 1536 bits - 192 bytes - round constants
     // 592:  192 bits -  24 bytes - rotation constants
 
-    val context = system::core::memory::allocBytes(616 as u32)
+    val context = bytes(616 as u32)
 
-    val result = system::core::memory::allocBytes(32 as u32)
+    val result = bytes(32 as u32)
 
     keccakInit(context.ptr)
 
@@ -356,7 +356,9 @@ impl Keccak {
   //
   // Push input to the context
   //
-  private fun keccakUpdate(contextOffset: u32, inputOffset: u32, inputLength: u32): void = {
+  private fun keccakUpdate(contextOffset: u32, _inputOffset: u32, _inputLength: u32): void = {
+    var inputOffset = _inputOffset
+    var inputLength = _inputLength
     // this is where we store the pointer
     val residueOffsetRef = (contextOffset + 200 as u32) as ref
     // this is where the buffer is
